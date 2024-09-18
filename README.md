@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# Consumindo API com useEffect
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Sumário
 
-## Available Scripts
+1. [Objetivo](#objetivo)
+2. [Como utilizar](#como-utilizar)
+3. [Exemplo de utilização](#exemplo-de-utilização)
 
-In the project directory, you can run:
+## Objetivo
 
-### `npm start`
+O objetivo deste projeto é ser apenas um pequeno estudo sobre useEffect, funcionalidade presente no React.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Neste projeto é abordado o consumo de uma API de raças de cães e apresentado, de maneira bem simples, na interface, podendo ser feita a busca pelo nome da raça.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Para o desenvolvimento foi utilizado o json-server.
 
-### `npm test`
+## Como utilizar
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Caso queira utilizar da mesma maneira do desenvolvimento, é necessário que possua o [Node](https://nodejs.org/pt) instalado (versão de desenvolvimento: 20.11.0) e o [json-server](https://www.alura.com.br/artigos/mockando-apis-rest-com-json-server) (versão de desenvolvimento: 1.0.0-beta.2).
 
-### `npm run build`
+Dessa forma, com essas dependências instaladas, é necessário clonar este repositório e, ao finalizar, rodar os seguintes comandos na raiz do projeto:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Instalar as dependências do projeto:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```cmd
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Iniciar o projeto
 
-### `npm run eject`
+```cmd
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+O projeto será iniciado em http://localhost:3000, basta acessá-lo via navegador e utilizá-lo.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Exemplo de utilização
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Assim que carregar a página as raças já serão carregadas.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![Página inicial da aplicação](./docs/imagens/pagina-inicial.png)
 
-## Learn More
+Caso queira buscar por uma raça em específico, basta colocar o nome dela no campo "Buscar por raça".
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Exemplo de busca da raça Akita](./docs/imagens/exemplo-busca-akita.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+A partir de 3 dígitos o sistema irá realizar a busca da raça, caso seja menos, irá retornar todas as raças.
 
-### Code Splitting
+É necessário, caso esteja utilizando json-server na versão citada, passar o nome da raça direitinho pois ele diferencia se as letras são maiúsculas e minúsculas e também a busca é realizada exatamente como está escrito. Na imagem anterior é demonstrado a busca por "Akita", caso estivesse como "akita" ele não traria nenhum resultado, assim como apresentado na imagem a seguir.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Exemplo de busca da raça Akita, escrito de maneira incorreta](./docs/imagens/exemplo-busca-akita-errado.png)
